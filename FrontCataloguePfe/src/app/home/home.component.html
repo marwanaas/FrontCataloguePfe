@@ -1,0 +1,86 @@
+
+<div class="container">
+
+    <div class="row" style="margin-top:10px;">
+        <div class="col-12">
+            <div class="card bg-primary text-white">
+                <div class="card-header">
+                    <h1>Project des listes Pfes</h1><br/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:10px;">
+        <div class="col">
+            <div class="input-group mb-3">
+                <button class="btn btn-danger" [routerLink]="['/add']">add pfe </button>&nbsp;&nbsp;   
+                <input  type="text" name="search"  
+                placeholder=" Titre du pfe à chercher" 
+                   [(ngModel)]="titre" aria-label="Search" >&nbsp;&nbsp;
+                   <button class="btn btn-primary"  (click)="gettitre()">chercher </button>
+              </div>
+                
+              
+        </div>
+        <div >
+           
+        </div>
+  
+       
+    </div>
+
+    <div class="row" style="margin-top:5px;">
+        <div class="col-3">
+            <div class="list-group">
+                <a (click)="getPfes()" class="list-group-item list-group-item-action active">
+                    <span class="fa fa-envelope"></span>
+                    Tous les Pfes
+                    <span class="badge badge-pill badge-warning">{{result}}</span>
+                </a>
+                <a   (click)="getpfec(c.id)"  *ngFor="let c of categorie" class="list-group-item list-group-item-action"  >
+                    <span class="fa fa-paper-plane"></span>
+                    
+                     PFEs {{c.titre}}
+                    <span class="badge badge-pill badge-info"></span>
+                </a>
+                
+            </div>
+        </div>
+
+        <div class="col-9">
+            <div class="col">
+                <div class="card text-white">
+                    <div class="card-header bg-primary"> Liste des Pfes</div>
+                    <table class="table table-hover">
+                        <thead class="thead-light">
+                          <tr><th>Id</th> <th>Titre</th><th>Type</th>
+                          <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr   *ngFor="let m of pfe" >
+                                <td>{{m.id}}</td><td>{{m.titre}}</td>
+                                <td>{{m.cat.titre}}</td>
+                                <td>
+                                    <button class="btn btn-danger" (click)="delete(m.id)">
+                                        <span class="fa fa-trash"> Delete</span>
+                                    </button>
+                                    
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>

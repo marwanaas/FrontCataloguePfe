@@ -1,0 +1,75 @@
+
+<div class="container">
+
+    <div class="row" style="margin-top:10px;">
+        <div class="col-12">
+            <div class="card bg-primary text-white">
+                <div class="card-header">
+                    <h1>Project des listes Pfes</h1><br/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:5px;">
+        <div class="col-3">
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action active">
+                    <span class="fa fa-envelope"></span>
+                    Tous les Pfes
+                    <span class="badge badge-pill badge-warning">25</span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action"  >
+                    <span class="fa fa-paper-plane"></span>
+                    PFEs Developpement
+                    <span class="badge badge-pill badge-info">5</span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    PFEs Reseaux
+                    <span class="badge badge-pill badge-info">10</span>
+                    
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    PFEs Embarque et Iot
+                    <span class="badge badge-pill badge-info">2</span>
+                
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    PFEs Telecom
+                    <span class="badge badge-pill badge-info">4</span>
+                    
+                </a>
+            </div>
+        </div>
+
+        <div class="col-9">
+            <div class="col">
+                <div class="card text-dark">
+                    <div class="card-header bg-success"> Ajouter Pfe</div>
+
+                        <div class="form-group ">
+        
+                            <label> Titre PFE</label>
+                            <input type="text" class="form-control"  [(ngModel)]="pfe.titre" >
+                        </div>
+                            
+                        <label > Type pfe</label>
+                        <select class="form-control" [(ngModel)]="pfe.cat.id"  >
+                         <option  *ngFor="let c of categorie" value="{{c.id}}"  > {{c.titre}} </option>
+                     </select>
+
+                        </div>
+                               <div class="form-group text-dark" >
+                                   <button type="submit" class="form-control bg bg-primary" value="Ajouter pfe" (click)="Add()" >Ajouter
+        </button>
+        
+
+                </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
